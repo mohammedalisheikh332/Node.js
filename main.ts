@@ -1,18 +1,16 @@
-var gobalvar:string ="Welcome To Pakistan"
-function scope(){
-    console.log(gobalvar)
+function printReverseStarPattern(rows: number): void {
+    let i: number = rows;
+    while (i >= 1) {
+        let j: number = 1;
+        while (j <= i) {
+            process.stdout.write("* ");
+            j++;
+        }
+        process.stdout.write("\n");
+        i--;
+    }
 }
-scope();
-   
-//// Local VS Gobal scope.
 
-// gobal scope
-
-// gobal variable can accesable ever
-
-var gobalvar = "25";
-function gobal(){
-
-}
-console.log(gobalvar)
-scope();
+// Example usage
+const numberOfRows: number = 5;
+printReverseStarPattern(numberOfRows);
