@@ -1,14 +1,16 @@
 "use strict";
-// Arrow function without parameters
-const greet = () => {
-    console.log("Hello, world!");
-};
-// Calling the function
-greet();
-// Arrow function with one parameters
-// Arrow function with one parameter
-const double = (x) => {
-    return x * 2;
-};
-// Calling the function
-console.log(double(5)); // Output: 10
+function printStarPattern(rows) {
+    let i = 1;
+    while (i <= rows) {
+        let j = 1;
+        while (j <= i) {
+            process.stdout.write("* ");
+            j++;
+        }
+        process.stdout.write("\n");
+        i++;
+    }
+}
+// Example usage
+const numberOfRows = 5;
+printStarPattern(numberOfRows);

@@ -1,23 +1,20 @@
-// Arrow function without parameters
-const greet = () => {
-    console.log("Hello, world!");
-};
+function printStarPattern(rows: number): void {
+    let i: number = 1;
+    while (i <= rows) {
+        let j: number = 1;
+        while (j <= i) {
+            process.stdout.write("* ");
+            j++;
+        }
+        process.stdout.write("\n");
+        i++;
+    }
+}
 
-// Calling the function
-greet();
+// Example usage
+const numberOfRows: number = 5;
+printStarPattern(numberOfRows);
 
-
-
-// Arrow function with one parameters
-
-
-// Arrow function with one parameter
-const double = (x: number) => {
-    return x * 2;
-};
-
-// Calling the function
-console.log(double(5)); // Output: 10
 
 
 
