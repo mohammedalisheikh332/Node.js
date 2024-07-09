@@ -1,47 +1,41 @@
-// Define a class representing an ATM
-class ATM {
-    private balance: number;
+import inquirer from "inquirer";
 
-    constructor(initialBalance: number) {
-        this.balance = initialBalance;
-    }
 
-    // Method to check balance
-    checkBalance(): number {
-        return this.balance;
-    }
+//user variable
 
-    // Method to deposit money
-    deposit(amount: number): void {
-        if (amount > 0) {
-            this.balance += amount;
-            console.log(`Deposited ${amount} successfully.`);
-        } else {
-            console.log('Invalid amount. Deposit failed.');
-        }
-    }
+let todo =[];
+while(true){
+    let input = await inquirer.prompt([
 
-    // Method to withdraw money
-    withdraw(amount: number): void {
-        if (amount > 0 && amount <= this.balance) {
-            this.balance -= amount;
-            console.log(`Withdrawn ${amount} successfully.`);
-        } else {
-            console.log('Insufficient funds. Withdrawal failed.');
-        }
-    }
+{
+ name: "todoitem",
+ type:"input",
+ message:'add todo item in listing'
+},
+{
+    name:"addmore",
+    type:'list',
+    choices:["yes", "No"]
 }
 
-// Example usage
-const atm = new ATM(1000); // Initial balance of 1000
 
-console.log(`Current Balance: ${atm.checkBalance()}`);
+    ]);
 
-atm.deposit(500); // Deposit 500
-console.log(`Current Balance after deposit: ${atm.checkBalance()}`);
 
-atm.withdraw(200); // Withdraw 200
-console.log(`Current Balance after withdrawal: ${atm.checkBalance()}`);
+    // output  of program.
 
-atm.withdraw(2000); // Attempt to withdraw more than balance
-console.log(`Current Balance after failed withdrawal: ${atm.checkBalance()}`);
+    const {todoitem,addmore} =input;
+    todo.push(todoitem);
+    if(addmore == "no"){
+        console.log("todo listing");
+
+        //add more item
+        for(let i = 0;i<todo.length;i++)
+            {console.log(todo[i])}
+
+        // exit loop
+        break;
+        
+    }
+
+}
